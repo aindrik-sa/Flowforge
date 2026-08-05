@@ -1,0 +1,29 @@
+
+
+services:
+
+  postgres:
+    image: postgres:17
+    container_name: flowforge_postgres
+
+    environment:
+      POSTGRES_DB: flowforge
+      POSTGRES_USER: flowforge
+      POSTGRES_PASSWORD: flowforge123
+
+    ports:
+      - "5432:5432"
+
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  redis:
+    image: redis:7
+
+    container_name: flowforge_redis
+
+    ports:
+      - "6379:6379"
+
+volumes:
+  postgres_data:
