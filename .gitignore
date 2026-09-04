@@ -10,6 +10,7 @@ venv/
 
 # Environment Variables
 .env
+backend/.env
 
 # VS Code
 .vscode/
@@ -22,3 +23,14 @@ venv/
 
 # Windows
 Thumbs.db
+
+# Django
+db.sqlite3
+*.log
+media/
+staticfiles/
+
+# IDE
+.idea/
+*.swp
+*.swo
