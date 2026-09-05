@@ -6,6 +6,7 @@ from .views import (
     OrganizationMemberListView,
     OrganizationMemberDetailView,
 )
+from apps.projects.api.views import WorkspaceListCreateView
 
 app_name = "organizations"
 
@@ -29,5 +30,10 @@ urlpatterns = [
         "<uuid:org_pk>/members/<uuid:member_pk>/",
         OrganizationMemberDetailView.as_view(),
         name="member-detail",
+    ),
+    path(
+        "<uuid:org_id>/workspaces/",
+        WorkspaceListCreateView.as_view(),
+        name="workspace-list-create",
     ),
 ]
