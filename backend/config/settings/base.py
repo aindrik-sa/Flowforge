@@ -33,6 +33,7 @@ INSTALLED_APPS = [
     "django.contrib.contenttypes",
     "django.contrib.sessions",
     "django.contrib.messages",
+    "daphne",
     "django.contrib.staticfiles",
     # Third-party
     "rest_framework",
@@ -48,6 +49,9 @@ INSTALLED_APPS = [
     "apps.tasks",
     "apps.comments",
     "apps.attachments",
+    "apps.notifications",
+    "apps.reports",
+    "channels",
 ]
 
 MIDDLEWARE = [
@@ -179,6 +183,39 @@ SPECTACULAR_SETTINGS = {
     "SERVE_INCLUDE_SCHEMA": False,
     "SCHEMA_PATH_PREFIX": "/api/v[0-9]",
 }
+
+# ---------------------------------------------------------------------------
+# Celery
+# ---------------------------------------------------------------------------
+CELERY_BROKER_URL = config("CELERY_BROKER_URL", default="redis://localhost:6379/1")
+CELERY_RESULT_BACKEND = config("CELERY_RESULT_BACKEND", default="redis://localhost:6379/1")
+CELERY_ACCEPT_CONTENT = ["json"]
+CELERY_TASK_SERIALIZER = "json"
+CELERY_RESULT_SERIALIZER = "json"
+CELERY_TIMEZONE = TIME_ZONE
+
+# ---------------------------------------------------------------------------
+# Django Channels (WebSockets)
+# ---------------------------------------------------------------------------
+CHANNEL_LAYERS = {
+    "default": {
+        "BACKEND": "channels_redis.core.RedisChannelLayer",
+        "CONFIG": {
+            "hosts": [config("REDIS_URL", default="redis://localhost:6379/2")],
+        },
+    },
+}
+
+# ---------------------------------------------------------------------------
+# Caching (Redis)
+# ---------------------------------------------------------------------------
+CACHES = {
+    "default": {
+        "BACKEND": "django.core.cache.backends.redis.RedisCache",
+        "LOCATION": config("REDIS_URL", default="redis://localhost:6379/3"),
+    }
+}
+
 
 # ---------------------------------------------------------------------------
 # CORS (configured per-environment)

@@ -22,6 +22,8 @@ urlpatterns = [
     path("api/v1/", include("apps.tasks.api.urls")),
     path("api/v1/", include("apps.comments.api.urls")),
     path("api/v1/", include("apps.attachments.api.urls")),
+    path("api/v1/", include("apps.notifications.api.urls")),
+    path("api/v1/", include("apps.reports.api.urls")),
 
     # OpenAPI schema & Swagger UI
     path("api/schema/", SpectacularAPIView.as_view(), name="schema"),
