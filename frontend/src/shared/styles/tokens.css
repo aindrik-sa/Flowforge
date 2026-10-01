@@ -1,0 +1,39 @@
+:root {
+  /* Colors */
+  --bg-0: #08080c;
+  --bg-1: #0e0e14;
+  --bg-2: #15151e;
+  
+  --surface-glass: rgba(255, 255, 255, 0.04);
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  
+  /* Accents */
+  --accent-indigo: #6366f1;
+  --accent-violet: #8b5cf6;
+  --gradient-accent: linear-gradient(135deg, var(--accent-indigo), var(--accent-violet));
+  --glow-accent: 0 0 24px rgba(99, 102, 241, 0.35);
+  
+  /* Text */
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+  --text-tertiary: #64748b;
+
+  /* Status Colors */
+  --status-urgent: #ef4444;
+  --status-high: #f97316;
+  --status-medium: #eab308;
+  --status-low: #3b82f6;
+  --status-done: #10b981;
+
+  /* Geometry */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-full: 9999px;
+  
+  /* Motion */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+  --dur-fast: 120ms;
+  --dur-base: 200ms;
+}

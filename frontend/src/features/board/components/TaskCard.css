@@ -1,0 +1,42 @@
+.task-card {
+  padding: 12px 14px;
+  background-color: var(--bg-1);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-subtle);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: border-color var(--dur-fast), transform var(--dur-fast);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  animation: scaleIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.task-card:hover {
+  border-color: var(--border-hover);
+}
+
+.task-card.is-dragging {
+  transform: scale(1.03) rotate(2deg) !important;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3), 0 0 0 1px var(--accent-indigo);
+  border-color: var(--accent-indigo);
+  z-index: 100;
+}
+
+.task-title {
+  font-size: 13px;
+  line-height: 1.4;
+  color: var(--text-primary);
+  font-weight: 400;
+}
+
+.task-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.96); }
+  to { opacity: 1; transform: scale(1); }
+}

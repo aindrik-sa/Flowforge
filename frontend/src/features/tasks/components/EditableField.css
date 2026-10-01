@@ -1,0 +1,38 @@
+.editable-display {
+  padding: 4px 6px;
+  margin: -4px -6px;
+  border-radius: var(--radius-sm);
+  cursor: text;
+  transition: background-color var(--dur-fast);
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.editable-display:hover {
+  background-color: var(--surface-glass);
+}
+
+.editable-display.is-empty {
+  color: var(--text-tertiary);
+  font-style: italic;
+}
+
+.editable-input {
+  width: 100%;
+  padding: 3px 5px;
+  margin: -4px -6px;
+  border: 1px solid var(--accent-indigo);
+  border-radius: var(--radius-sm);
+  background-color: var(--surface-glass);
+  color: var(--text-primary);
+  outline: none;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+}
+
+.editable-input.textarea {
+  min-height: 100px;
+  resize: vertical;
+}

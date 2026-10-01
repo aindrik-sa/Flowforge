@@ -1,0 +1,130 @@
+.auth-layout {
+  display: flex;
+  min-height: 100vh;
+  width: 100vw;
+  background-color: var(--bg-0);
+}
+
+.auth-mesh-bg {
+  flex: 1;
+  display: none;
+  position: relative;
+  overflow: hidden;
+  background: var(--bg-1);
+}
+
+@media (min-width: 1024px) {
+  .auth-mesh-bg {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.auth-mesh-bg::before,
+.auth-mesh-bg::after {
+  content: '';
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  filter: blur(100px);
+  z-index: 0;
+  animation: float 20s infinite alternate cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.auth-mesh-bg::before {
+  background: rgba(99, 102, 241, 0.15); /* Indigo */
+  top: -10%;
+  left: -10%;
+}
+
+.auth-mesh-bg::after {
+  background: rgba(139, 92, 246, 0.15); /* Violet */
+  bottom: -10%;
+  right: -10%;
+  animation-delay: -10s;
+}
+
+@keyframes float {
+  0% { transform: translate(0, 0) scale(1); }
+  100% { transform: translate(100px, 100px) scale(1.1); }
+}
+
+.auth-mesh-content {
+  position: relative;
+  z-index: 1;
+  max-width: 400px;
+  text-align: left;
+}
+
+.logo-large {
+  width: 64px;
+  height: 64px;
+  border-radius: var(--radius-lg);
+}
+
+.auth-mesh-content h1 {
+  font-size: 48px;
+  font-weight: 700;
+  letter-spacing: -1px;
+}
+
+.auth-form-container {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.auth-form-wrapper {
+  width: 100%;
+  max-width: 400px;
+  padding: 40px;
+  border-radius: var(--radius-lg);
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group label {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
+.auth-error {
+  margin-top: 16px;
+  padding: 12px;
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.2);
+  color: #fca5a5;
+  border-radius: var(--radius-sm);
+  font-size: 13px;
+}
+
+/* Shake animation for errors */
+.shake {
+  animation: shake 0.4s cubic-bezier(.36,.07,.19,.97) both;
+}
+
+@keyframes shake {
+  10%, 90% { transform: translate3d(-1px, 0, 0); }
+  20%, 80% { transform: translate3d(2px, 0, 0); }
+  30%, 50%, 70% { transform: translate3d(-4px, 0, 0); }
+  40%, 60% { transform: translate3d(4px, 0, 0); }
+}
+
+.w-full { width: 100%; }
+.mt-2 { margin-top: 8px; }
+.mt-4 { margin-top: 16px; }
+.mt-6 { margin-top: 24px; }
+.mt-8 { margin-top: 32px; }
+.mb-2 { margin-bottom: 8px; }
+.mb-4 { margin-bottom: 16px; }
+.mb-8 { margin-bottom: 32px; }
+.text-center { text-align: center; }

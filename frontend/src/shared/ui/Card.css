@@ -1,0 +1,21 @@
+.card {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.card-header {
+  padding: 20px 24px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.card-title {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.card-content {
+  padding: 0 24px 24px;
+}

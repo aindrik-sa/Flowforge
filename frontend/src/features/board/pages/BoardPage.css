@@ -1,0 +1,49 @@
+.board-page {
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 180px); /* Fill remaining space */
+}
+
+.board-canvas {
+  display: flex;
+  gap: 24px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  flex: 1;
+  padding-bottom: 16px;
+  /* Thin custom scrollbar */
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
+}
+
+.board-canvas::-webkit-scrollbar {
+  height: 6px;
+}
+
+.board-canvas::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.board-canvas::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+}
+
+.add-column-btn {
+  min-width: 280px;
+  height: 48px;
+  border-radius: var(--radius-md);
+  border: 1px dashed var(--border-subtle);
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+  transition: var(--dur-fast);
+}
+
+.add-column-btn:hover {
+  background-color: var(--surface-glass);
+  color: var(--text-primary);
+  border-color: var(--border-medium);
+}

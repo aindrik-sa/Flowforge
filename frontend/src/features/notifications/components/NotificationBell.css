@@ -1,0 +1,49 @@
+.bell-btn {
+  position: relative;
+  color: var(--text-secondary);
+}
+
+.bell-btn:hover {
+  color: var(--text-primary);
+}
+
+.ringing {
+  animation: bellRing 0.5s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+}
+
+.unread-badge {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  background-color: var(--accent-indigo);
+  color: white;
+  font-size: 10px;
+  font-weight: 700;
+  height: 16px;
+  min-width: 16px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 4px;
+  box-shadow: 0 0 0 2px var(--bg-1);
+}
+
+.badge-pop {
+  animation: badgePop 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes bellRing {
+  0% { transform: rotate(0); }
+  20% { transform: rotate(15deg); }
+  40% { transform: rotate(-10deg); }
+  60% { transform: rotate(5deg); }
+  80% { transform: rotate(-2deg); }
+  100% { transform: rotate(0); }
+}
+
+@keyframes badgePop {
+  0% { transform: scale(0.8); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
