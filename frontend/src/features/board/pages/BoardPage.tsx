@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react';
 import { useOutletContext } from 'react-router-dom';
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
-import { DragDropContext, Droppable, DropResult } from '@hello-pangea/dnd';
+import { DragDropContext, Droppable, type DropResult } from '@hello-pangea/dnd';
 import { boardApi } from '../api';
 import type { Project } from '../../projects/types';
 import type { Task, BoardColumn } from '../types';

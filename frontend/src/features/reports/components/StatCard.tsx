@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import './ProjectReportsPage.css';
+import '../pages/ProjectReportsPage.css';
 
 interface StatCardProps {
   title: string;
